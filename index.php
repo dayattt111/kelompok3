@@ -21,8 +21,14 @@
                     <h3><?= $item['nama'] ?></h3>
                     <p>Rp.<?= $item['harga'] ?></p>
                 </div>
-                <button type="submit" class="btn-pesan" >Pesan Kamar</button>
-                <?php    endforeach ?> <!-- Berhenti -->
+                <!-- <button type="submit" class="btn-pesan" >Pesan Kamar</button> -->
+                <button 
+                    type="submit" 
+                    class="btn-pesan" 
+                    <?= $item['tersedia'] ? '' : 'disabled' ?>>
+                    <?= $item['tersedia'] ? 'Pesan Kamar' : 'Tidak Tersedia' ?>
+                </button>
+                <?php endforeach ?> <!-- Berhenti -->
             </div>
 </body>
 </html>

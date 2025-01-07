@@ -63,3 +63,8 @@ body {
     background-color: #d3d3d3;
     cursor: not-allowed;
 }
+/* .btn-pesan:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #666;
+} */
