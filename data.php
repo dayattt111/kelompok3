@@ -62,25 +62,25 @@
             'nama' => 'kamar 8',
             'harga' => 1800000,
             'deskripsi' => 'kamar 8 ini sangat tidak nyaman',
-            'gambar' => 'asset/k7.jpg',
-            'tersedia' => true 
-        ],
-        [
-            'id' => 9,
-            'nama' => 'kamar 9',
-            'harga' => 1800000,
-            'deskripsi' => 'kamar 9 ini sangat tidak nyaman',
             'gambar' => 'asset/k8.jpg',
             'tersedia' => true 
         ],
-        [
-            'id' => 10,
-            'nama' => 'kamar 10',
-            'harga' => 1800000,
-            'deskripsi' => 'kamar 10 ini sangat tidak nyaman',
-            'gambar' => 'asset/k9.jpg',
-            'tersedia' => true 
-        ],
+        // [
+        //     'id' => 9,
+        //     'nama' => 'kamar 9',
+        //     'harga' => 1800000,
+        //     'deskripsi' => 'kamar 9 ini sangat tidak nyaman',
+        //     'gambar' => 'asset/k8.jpg',
+        //     'tersedia' => true 
+        // ],
+        // [
+        //     'id' => 10,
+        //     'nama' => 'kamar 10',
+        //     'harga' => 1800000,
+        //     'deskripsi' => 'kamar 10 ini sangat tidak nyaman',
+        //     'gambar' => 'asset/k9.jpg',
+        //     'tersedia' => true 
+        // ],
     ];
     
 ?>

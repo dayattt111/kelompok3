@@ -1,0 +1,15 @@
+
+                    <?= $item['tersedia'] ? '' : 'disabled' ?>>
+                    <?= $item['tersedia'] ? 'Pesan Kamar' : 'Tidak Tersedia' ?>
+                    
+
+                         <div class="btn">
+                    <form action="" method="post">
+                        <!-- Input Hidden untuk Mengirimkan ID Kamar -->
+                        <input type="hidden" name="id" value="<?= $item['id'] ?>">
+                        <!-- Input Hidden untuk Menandai Pesanan -->
+                        <input type="hidden" name="pesan" value="1">
+                        <!-- Tombol Submit -->
+                        <input type="submit" value="Pesan">
+                    </form>
+                </div>

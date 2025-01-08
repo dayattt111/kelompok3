@@ -1,19 +1,19 @@
 <?php 
-    include 'arrayFunction.php'
+    include 'data.php';
 
-    function prosesBooking($inputData, $bookingKamar){
-        if(isset($postData['pesan']) && !in_array($postData['id'], $bookingKamar)){
-            $bookingKamar[] = $postData['id']; 
+    function prosesBooking($inputData, $bookingKamar) {
+        if (isset($inputData['pesan']) && !in_array($inputData['id'], $bookingKamar)) {
+            $bookingKamar[] = $inputData['id'];
         }
         return $bookingKamar;
     }
     //stats
-    function getRoomsStats($data, $bookingKamar){
-        return [count($data), count($bookingKamar), count($data) - count($bookingKamar)];
+    function getRoomsStats($kamar, $bookingKamar){
+        return [count($kamar), count($bookingKamar), count($kamar) - count($bookingKamar)];
     }
     $bookingKamar = prosesBooking($_POST, $_POST['bookingKamar'] ?? [
     ]);  
-    list($total_kamar, $kamar_booking, $kamar_kosong) = getRoomsStats($data, $bookingKamar);
+    list($total_kamar, $kamar_booking, $kamar_kosong) = getRoomsStats($kamar, $bookingKamar);
 
     
 ?>      

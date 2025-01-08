@@ -1,0 +1,26 @@
+footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: brown;
+}
+.left-section {
+    width: 45%;
+}
+.right-section {
+    width: 45%;
+}
+.header {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.creator-info {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+.map {
+    right: 90%;
+}

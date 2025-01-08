@@ -4,12 +4,10 @@
         margin: 0;
         padding: 20px;
     }
-
-
     .container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Membuat kolom responsif */
-        gap: 20px; /* Jarak antar kartu */
+        /* gap: 20px; Jarak antar kartu/ */
         justify-content: center; /* Pusatkan konten */
     }
 
@@ -20,6 +18,7 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         text-align: center;
+        gap: 20px;
         transition: background-color 0.3s;
     }
 
@@ -66,4 +65,11 @@
     .btn-pesan:disabled {
         background-color: #d3d3d3;
         cursor: not-allowed;
+    }
+    .hero{
+        background-image: url(/asset/k3.jpg);
+        no-repeat center center/cover;
+        height: 700px;
+        color: white;
+        padding: 100px 0;
     }

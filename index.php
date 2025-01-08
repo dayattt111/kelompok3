@@ -1,109 +1,75 @@
+<?php 
+function loginLogic() {
+    $user = [
+        [
+            "username" => "admin",
+            "password" => "admin123",
+            "level" => "admin",
+        ],
+        // [
+        //     "username" => "user",
+        //     "password" => "user123",    
+        //     "level" => "user",
+        // ]
+    ];
+    
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $userDetek = 0;
+	$userLevel = 0;
+
+    for ($input = 0; $input < count($user); $input++) {
+        if ($user[$input]['username'] == $username && $user[$input]['password'] == $password) {
+            $userDetek = 1;
+			if($user[$input]['level'] == "admin"){
+				$userLevel = 1;
+			}
+			else{
+				$userLevel = 0;
+			}
+            break;
+        }
+    }
+
+    if ($userDetek == 1 && $userLevel == 1) {
+        // echo '<script>alert("Login berhasil sebagai admin!");</script>';
+		header("location:admin.php");
+
+    }
+    // elseif($userDetek == 1 && $userLevel == 0){
+	// 	// echo '<script>alert("Login berhasil sebagai user!");</script>';
+	// 	header("location:index.php");
+	// }
+	else {
+        echo '<script>alert("Login gagal. Username atau password salah.");</script>';
+    }
+}
+
+// Cek apakah form dikirim
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    loginLogic();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/login.css">
 </head>
-<style>
-    h1 {
-    color: black;
-    text-align: center;
-    }
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f9;
-        margin: 0;
-        padding: 20px;
-    }
-
-
-    .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Membuat kolom responsif */
-        gap: 20px; /* Jarak antar kartu */
-        justify-content: center; /* Pusatkan konten */
-    }
-
-    .card {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        text-align: center;
-        transition: background-color 0.3s;
-    }
-
-    .greyed-out {
-        background-color: brown;
-    }
-
-    .card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .card-content {
-        padding: 15px;
-    }
-
-    h3 {
-        margin: 10px 0;
-        font-size: 20px;
-        color: whitesmoke;
-    }
-
-    .card-content p {
-        font-size: 14px;
-        color: whitesmoke;
-    }
-
-    .btn {
-        padding: 15px; /* Padding untuk tombol */
-    }
-
-    .btn-pesan {
-        background-color: #007BFF;
-        color: #fff;
-        padding: 10px 16px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 1em;
-        transition: background-color 0.3s;
-    }
-
-    .btn-pesan:disabled {
-        background-color: #d3d3d3;
-        cursor: not-allowed;
-    }
-</style>
 <body>
-    <h1>Daftar Kamar</h1>
-    <div class="desk">
-        <!-- desk nya disini nanti -->
-    </div>
-    <div class="container">
-        <?php include "arrayFunction.php"; foreach ($kamar as $item): ?> <!-- Mulai --> 
-            <div class="card greyed-out">
-                <img src="<?= $item['gambar'] ?>" alt="<?= $item['nama'] ?>">
-                <div class="card-content">
-                    <h3><?= $item['nama'] ?></h3>
-                    <p>Rp.<?= $item['harga'] ?></p>
-                </div>
-                <div class="btn">
-                    <button 
-                    type="submit" 
-                    class="btn-pesan" 
-                    <?= $item['tersedia'] ? '' : 'disabled' ?>>
-                    <?= $item['tersedia'] ? 'Pesan Kamar' : 'Tidak Tersedia' ?>
-                    </button>
-                </div>
-            </div>
-        <?php endforeach ?> <!-- Berhenti -->
+    <div class="contact-form">
+        <img alt="" class="avatar" src="./asset/pp.jpg">
+        <h2>Silahkan Login</h2> <br><br>
+        <form action="" method="post">
+            <p>Username</p>
+            <input placeholder="Enter Username" name="username" type="text">
+            <p>Password</p>
+            <input placeholder="Enter Password" name="password" type="password"> 
+            <input type="submit" value="Masuk">
+        </form>
     </div>
 </body>
 </html>
